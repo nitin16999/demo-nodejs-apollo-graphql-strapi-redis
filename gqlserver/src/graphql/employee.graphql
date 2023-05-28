@@ -1,4 +1,3 @@
-
 type Employee {
   id: Int
   name: String
@@ -8,6 +7,9 @@ type Employee {
   created_at: String
   updated_at: String
   tasks: [Task]
+  address: Address
+  account: Account
+  department: Department
 }
 
 type Query {

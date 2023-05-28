@@ -1,0 +1,14 @@
+type Address {
+  id: Int!
+  zipcode: Int
+  city: String
+  landmark: String
+  created_at: String
+  updated_at: String
+  employee: Employee!
+}
+
+type Query {
+  address(id: Int!): Address
+  addresses: [Address]
+}

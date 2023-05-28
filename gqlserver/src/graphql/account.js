@@ -5,13 +5,13 @@ module.exports = {
   Query: {
     // resolver: (parent,args,context,info) <- options params
     // here '_' <- parent
-    tasks: (_, __, context) => context.dataSources.tasks.get(),
-    task: (_, { id }, context) =>
-      context.dataSources.tasks.getById(id) || new NotFoundError(),
+    accounts: (_, __, context) => context.dataSources.accounts.get(),
+    account: (_, { id }, context) =>
+      context.dataSources.accounts.getById(id) || new NotFoundError(),
   }, // end Query
 
   // join resolvers
-  Task: {
+  Account: {
     employee: (_, __, context) =>
       context.dataSources.employees.getById(_.employee.id),
   },

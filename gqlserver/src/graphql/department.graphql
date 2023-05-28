@@ -1,0 +1,13 @@
+type Department {
+  id: Int
+  depName: String
+  depDesciption: String
+  created_at: String
+  updated_at: String
+  employees: [Employee]
+}
+
+type Query {
+  department(id: Int!): Department
+  departments: [Department]
+}

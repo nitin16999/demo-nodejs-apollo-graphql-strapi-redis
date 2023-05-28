@@ -1,6 +1,6 @@
 const { EmployeeDS } = require('./employee');
 
-class TaskDS extends EmployeeDS {
+class AccountDS extends EmployeeDS {
   constructor(taskOpts) {
     super(taskOpts);
   }
@@ -25,4 +25,4 @@ class TaskDS extends EmployeeDS {
   }
 }
 
-exports.TaskDS = TaskDS;
+exports.AccountDS = AccountDS;

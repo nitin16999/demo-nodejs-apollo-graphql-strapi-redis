@@ -1,13 +1,13 @@
-const { EmployeeDS } = require('./employee');
+const { BaseDS } = require('./base');
 
-class TaskDS extends EmployeeDS {
+class EmployeeDS extends BaseDS {
   constructor(taskOpts) {
     super(taskOpts);
   }
 
-  async getByEmpId(empId, params = {}) {
+  async getByDepId(depId, params = {}) {
     var cacheKey = params ? JSON.stringify(params) : 'noparams';
-    cacheKey = `employee:${this.cacheKeyBase}:${cacheKey}`;
+    cacheKey = `department:${this.cacheKeyBase}:${cacheKey}`;
 
     const cacheDoc = await this.cache.get(cacheKey);
     if (cacheDoc) {
@@ -16,7 +16,7 @@ class TaskDS extends EmployeeDS {
 
     const doc = await this.service.get({
       ...params,
-      'employee.id': empId,
+      'department.id': depId,
     });
 
     this.cache.set(cacheKey, JSON.stringify(doc), { ttl: 3 });
@@ -25,4 +25,4 @@ class TaskDS extends EmployeeDS {
   }
 }
 
-exports.TaskDS = TaskDS;
+exports.EmployeeDS = EmployeeDS;

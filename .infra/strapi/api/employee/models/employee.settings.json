@@ -28,15 +28,17 @@
       "collection": "task",
       "via": "employee"
     },
-    "address": {
-      "model": "address"
-    },
-    "account": {
-      "model": "account"
-    },
     "department": {
       "via": "employees",
       "model": "department"
+    },
+    "address": {
+      "via": "employee",
+      "model": "address"
+    },
+    "account": {
+      "via": "employee",
+      "model": "account"
     }
   }
 }

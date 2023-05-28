@@ -1,0 +1,14 @@
+type Account {
+  id: Int!
+  Name: String
+  mobile: Int
+  avatar: String
+  created_at: String
+  updated_at: String
+  employee: Employee!
+}
+
+type Query {
+  account(id: Int!): Account
+  accounts: [Account]
+}
